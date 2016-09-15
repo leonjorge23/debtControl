@@ -11,7 +11,7 @@
             <p>Keep track of how much you owe and to whom. <br>
                 Also have your debtors information handy, individual balance and debt payment records per account</p>
 
-            <a class="btn btn-success" href="/debtControl/debtOverview.php">Debt Oveview - Go!</a>
+            <a class="btn btn-success" href="debtOverview.php">Debt Oveview - Go!</a>
         </div>
     </div>
 <?php require 'layout/footer.php'; ?>

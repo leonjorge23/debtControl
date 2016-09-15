@@ -30,14 +30,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/debtControl/">DebtControl App</a>
+                <a class="navbar-brand" href="/">DebtControl App</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/debtControl/">Home</a></li>
-                    <li ><a href="/debtControl/debtOverview.php">Debt Overview</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="/phpCldebtControlass2/contact.php">Contact</a></li>
+                    <li class="active"><a href="/">Home</a></li>
+                    <li ><a href="/debtOverview.php">Debt Overview</a></li>
+                    <li><a href="/about.php">About</a></li>
+                    <li><a href="/contact.php">Contact</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                         <ul class="dropdown-menu">

@@ -53,16 +53,16 @@ $totalDebt = $creditorManager->sumTotalDebt($creditorStatuses);
                             <?php if($credior['balance']) {
                                 echo '$'.$credior['balance'];
                             }else {
-                              echo  '<a href="/debtControl/acctView.php?id='. $credior['acct_id'] . '">Add balance</a>';
+                              echo  '<a href="acctView.php?id='. $credior['acct_id'] . '">Add balance</a>';
                             }
                             ?>
                         </td>
-                        <td><a href="/debtControl/acctView.php?id=<?php echo $credior['acct_id'] ?>" class="btn btn-sm btn-success">Acct. Details</a></td>
+                        <td><a href="acctView.php?id=<?php echo $credior['acct_id'] ?>" class="btn btn-sm btn-success">Acct. Details</a></td>
                     </tr>
                 <?php } ?>
                 </tbody>
             </table>
-                <a href="/debtControl/addCreditor.php" class="btn btn-primary">Add Creditor</a>
+                <a href="addCreditor.php" class="btn btn-primary">Add Creditor</a>
         </div>
 
     </div>

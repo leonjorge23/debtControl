@@ -41,7 +41,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
     save_payment($newPayment);
-    header('Location: /debtControl/acctView.php?id=' . $acct_id );
+    header('Location: acctView.php?id=' . $acct_id );
     die;
 }else {
     $id = $_GET['id'];
@@ -56,7 +56,7 @@ require 'layout/header.php';
 
         <div class="row">
             <div class="col-sm-8">
-                <form class="form-horizontal" action="/debtControl/addPayment.php" method="POST">
+                <form class="form-horizontal" action="addPayment.php" method="POST">
                     <input name="acct_id" class="hidden" value="<?php echo $id ?>"/>
                     <div class="form-group">
                         <label for="payment_amount" class="col-sm-3 control-label">Amount: </label>

@@ -72,7 +72,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
     $credtorManager -> updateCreditor($updateCreditor);
-    header('Location: /debtControl/debtOverview.php');
+    header('Location: debtOverview.php');
     die;
 } else {
     $id = $_GET['id'];
@@ -87,7 +87,7 @@ require 'layout/header.php';
 
     <div class="row">
         <div class="col-sm-8">
-            <form class="form-horizontal" action="/debtControl/editCreditor.php" method="POST">
+            <form class="form-horizontal" action="editCreditor.php" method="POST">
                 <input class="hidden" name="acct_id" type="text" value="<?php echo $id ?>">
                 <div class="form-group">
                     <label for="company_name" class="col-sm-3 control-label">Company Name:</label>

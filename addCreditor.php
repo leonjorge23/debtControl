@@ -62,7 +62,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
     $creditorManager->saveCreditor($newCreditor);
-    header('Location: /debtControl/debtOverview.php');
+    header('Location: debtOverview.php');
     die;
 }
 
@@ -74,7 +74,7 @@ require 'layout/header.php';
 
     <div class="row">
         <div class="col-sm-8">
-            <form class="form-horizontal" action="/debtControl/addCreditor.php" method="POST">
+            <form class="form-horizontal" action="addCreditor.php" method="POST">
                 <div class="form-group">
                     <label for="company_name" class="col-sm-3 control-label">Company Name:</label>
                     <div class="col-sm-9">

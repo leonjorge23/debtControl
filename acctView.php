@@ -31,7 +31,7 @@ require 'layout/header.php';
                     <p><strong>Status: </strong> <?php echo $acctInfo['status']?> </p>
                 </div>
             </div>
-            <a class="btn btn-primary" href="/debtControl/editCreditor.php?id=<?php echo $id ?>">Edit Creditor</a>
+            <a class="btn btn-primary" href="editCreditor.php?id=<?php echo $id ?>">Edit Creditor</a>
         </div>
     </div>
     <hr>
@@ -55,7 +55,7 @@ require 'layout/header.php';
                     <td><?php echo $payment['payment_date']?></td>
                     <td>$<?php echo $payment['balance']?></td>
                     <td><?php echo $payment['notes']?></td>
-                    <td class="text-center"><a href="/debtControl/acctView.php?id=<?php echo $id ?>&payment_id=<?php echo $payment['payment_id']?>" >
+                    <td class="text-center"><a href="acctView.php?id=<?php echo $id ?>&payment_id=<?php echo $payment['payment_id']?>" >
                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                         </a>
                     </td>
@@ -63,8 +63,8 @@ require 'layout/header.php';
                 <?php } ?>
                 </tbody>
             </table>
-            <a href="/debtControl/addPayment.php?id=<?php echo $id ?>" class="btn btn-primary mb-20">Add Payment</a>
-            <a href="/debtControl/addPayment.php?id=<?php echo $id ?>" class="btn btn-primary mb-20">Edit Balance</a>
+            <a href="addPayment.php?id=<?php echo $id ?>" class="btn btn-primary mb-20">Add Payment</a>
+            <a href="addPayment.php?id=<?php echo $id ?>" class="btn btn-primary mb-20">Edit Balance</a>
         </div>
     </div>
 </div>
