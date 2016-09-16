@@ -24,7 +24,8 @@ $totalDebt = $creditorManager->sumTotalDebt($creditorStatuses);
                     <th>Company Name</th>
                     <th>Last Payment Date</th>
                     <th>Last Payment Amount</th>
-                    <th>Account Balance</th>
+                    <th>Balance</th>
+                    <th>Status</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -56,6 +57,9 @@ $totalDebt = $creditorManager->sumTotalDebt($creditorStatuses);
                               echo  '<a href="/debtControl/acctView.php?id='. $credior['acct_id'] . '">Add balance</a>';
                             }
                             ?>
+                        </td>
+                        <td>
+                            <?php echo $credior['status']; ?>
                         </td>
                         <td><a href="/debtControl/acctView.php?id=<?php echo $credior['acct_id'] ?>" class="btn btn-sm btn-success">Acct. Details</a></td>
                     </tr>

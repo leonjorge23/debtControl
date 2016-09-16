@@ -76,12 +76,13 @@ class creditorManager
     public function getCreditorStatus(){
         $pdo = get_connection();
 
-        $query = 'SELECT t1.company_name, t1.acct_id, t2.payment_date, t2.payment_amount, t2.balance From creditor t1 LEFT JOIN payment t2 ON t1.acct_id = t2.acct_id ORDER BY t2.payment_date DESC';
+        $query = 'SELECT t1.company_name, t1.acct_id, t1.status, t2.payment_date, t2.payment_amount, t2.balance, t2.payment_id From creditor t1 LEFT JOIN payment t2 ON t1.acct_id = t2.acct_id ORDER BY t2.payment_date DESC';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $creditorStatuses = $stmt->fetchAll();
 
-        return $creditorStatuses;
+        return $this->showOnlyLastPayment($creditorStatuses);
+
     }
 
     public function sumTotalDebt($debt){
@@ -90,5 +91,41 @@ class creditorManager
             $total = $total  + $creditor['balance'];
         }
         return $total;
+    }
+
+    private function showOnlyLastPayment($creditorStatuses)
+    {
+        $mapArr = array();
+
+        foreach ($creditorStatuses as $key => $subArr) {
+
+            $tempArr = array(
+                'acct_id' => $subArr['acct_id'],
+                'payment_id' => $subArr['payment_id']
+            );
+
+            if ($key == 0) {
+                $mapArr[] = $subArr;
+            } else {
+                if ($tempArr['payment_id'] == Null) {
+                    $mapArr[] = $subArr;
+                } else {
+                    foreach ($mapArr as $subKey => $obj) {
+                        if ($tempArr['acct_id'] == $obj['acct_id']) {
+                            $date_a = strtotime($subArr['payment_date']);
+                            $date_b = strtotime($obj['payment_date']);
+                            if ($date_a > $date_b) {
+                                $mapArr[$subKey] = $subArr;
+                            }
+                        } else {
+                            $mapArr[] = $subArr;
+                        }
+                    }
+                }
+
+            }
+
+        }
+        return $mapArr;
     }
 }

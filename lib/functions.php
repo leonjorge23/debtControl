@@ -47,7 +47,7 @@ function delete_payment($payment_id){
 function get_payments($id){
     $pdo = get_connection();
 
-    $query = 'SELECT * from payment WHERE acct_id='. $id;
+    $query = 'SELECT * from payment WHERE acct_id=' . $id . ' ORDER BY payment_id DESC';
     $stmt = $pdo->prepare($query);
     $stmt->execute();
     $payments = $stmt->fetchAll();

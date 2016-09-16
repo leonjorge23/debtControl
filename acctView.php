@@ -38,7 +38,7 @@ require 'layout/header.php';
     <h2>Account History</h2>
     <div class="row">
         <div class="col-sm-8">
-            <table class="table table-hover table-bordered">
+            <table class="table table-hover table-bordered payments-view">
                 <thead>
                 <tr class="active">
                     <th>Payment Amount</th>
@@ -53,7 +53,7 @@ require 'layout/header.php';
                 <tr>
                     <th scope="row">$<?php echo $payment['payment_amount']?></th>
                     <td><?php echo $payment['payment_date']?></td>
-                    <td>$<?php echo $payment['balance']?></td>
+                    <td class="balance">$<?php echo $payment['balance'] ?></td>
                     <td><?php echo $payment['notes']?></td>
                     <td class="text-center"><a href="/debtControl/acctView.php?id=<?php echo $id ?>&payment_id=<?php echo $payment['payment_id']?>" >
                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
